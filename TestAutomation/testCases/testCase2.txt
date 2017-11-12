@@ -1,0 +1,6 @@
+Test ID: 002
+Component Being Tested: Profile Creation
+Method Being Tested: model.set_nick(testCase)
+Requirement Being Tested: Creating a username
+Test Input(s):[" "]
+Expected Outcome: Pass

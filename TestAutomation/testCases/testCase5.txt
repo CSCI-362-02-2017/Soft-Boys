@@ -1,0 +1,34 @@
+Test ID: 001
+Component Being Tested: Profile Creation
+Method Being Tested: model.set_nick(testCase)
+Requirement Being Tested: Creating a username
+Test Input(s):[""]
+Expected Outcome: Fail
+
+Test ID: 002
+Component Being Tested: Profile Creation
+Method Being Tested: model.set_nick(testCase)
+Requirement Being Tested: Creating a username
+Test Input(s):[" "]
+Expected Outcome: Pass
+
+Test ID: 003
+Component Being Tested: Profile Creation
+Method Being Tested: model.set_nick(testCase)
+Requirement Being Tested: Creating a username
+Test Input(s):["Jim Bowring"]
+Expected Outcome: Pass
+
+Test ID: 004
+Component Being Tested: Profile Creation
+Method Being Tested: model.set_nick(testCase)
+Requirement Being Tested: Creating a username
+Test Input(s):["2"]
+Expected Outcome: Pass
+
+Test ID: 005
+Component Being Tested: Profile Creation
+Method Being Tested: model.set_nick(testCase)
+Requirement Being Tested: Creating a username
+Test Input(s):["@"]
+Expected Outcome: Pass
