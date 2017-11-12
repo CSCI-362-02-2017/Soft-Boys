@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-09 13:19-0400\n"
+"PO-Revision-Date: 2016-04-29 19:13+0000\n"
+"Last-Translator: Mohomodou  <mh@bollag-areal.ch>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: son\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1461957234.000000\n"
+
+#: activity/activity.info:2
+msgid "Arithmetic"
+msgstr "Kabuyan"
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:173
+msgid "Name"
+msgstr "Maa"
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:174
+msgid "Round score"
+msgstr "Windiiyan dimma"
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:175
+msgid "Total score"
+msgstr "Dimma timmante"
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:176
+msgid "Time for answering last question"
+msgstr "Waati ka hãayan kooraa zaabi"
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:206
+msgid "Difficulty: "
+msgstr "Šenday: "
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:207
+msgid "Period: "
+msgstr "Waati: "
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:209
+msgid "Puzzles: "
+msgstr "Boŋhaway: "
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:210
+msgid "Question: "
+msgstr "Hãayan: "
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:211
+msgid "Answer: "
+msgstr "Zaabi: "
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:212
+msgid "You were: "
+msgstr "Hunyan: "
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:213
+msgid "Last round: "
+msgstr "Windiyan koraw: "
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:215
+msgid "Time until next question: "
+msgstr "Waati hala hiino hãayanoo: "
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:383
+msgid "Correct!"
+msgstr "Alhakiika!"
+
+#: /home/cjb/git/Arithmetic.activity/arithmetic.py:392
+msgid "Not correct"
+msgstr "Ši cum"
