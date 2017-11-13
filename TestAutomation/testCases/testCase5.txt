@@ -1,6 +1,6 @@
-Test ID: 005
-Component Being Tested: Profile Creation
-Method Being Tested: model.set_nick(testCase)
-Requirement Being Tested: Creating a username
-Test Input(s):["@"]
-Expected Outcome: Pass
+Test ID:005
+Component Being Tested:Functions
+Method Being Tested:pow
+Requirement Being Tested:Caculating the power of a number.
+Test Input(s):NULL NULL
+Expected Outcome:Fail

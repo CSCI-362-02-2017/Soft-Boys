@@ -1,0 +1,6 @@
+Test ID:020
+Component Being Tested:Function
+Method Being Tested:factorize
+Requirement Being Tested:Determines the prime factors.
+Test Input(s):4 5
+Expected Outcome:Fail

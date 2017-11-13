@@ -1,0 +1,6 @@
+Test ID:015
+Component Being Tested:Function
+Method Being Tested:factorize
+Requirement Being Tested:Determines the prime factors.
+Test Input(s):""
+Expected Outcome:0
