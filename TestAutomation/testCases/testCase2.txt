@@ -2,5 +2,5 @@ Test ID: 002
 Component Being Tested:Function
 Method Being Tested:pow
 Requirement Being Tested:Caculating the power of a number.
-Test Input(s):2 a
+Test Input(s):2 'a'
 Expected Outcome:Fail

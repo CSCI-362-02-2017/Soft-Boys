@@ -2,5 +2,5 @@ Test ID:009
 Component Being Tested:Function
 Method Being Tested:b10bin
 Requirement Being Tested:Caculating from binary to integer.
-Test Input(s):11011 11010
+Test Input(s):11011, 11010
 Expected Outcome:Fail
