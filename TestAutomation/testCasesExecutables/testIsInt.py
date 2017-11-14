@@ -1,6 +1,6 @@
 import sys
 
-def testIs_int(x):
+def testIsInt(x):
 	sys.path.append('../project/sugarlabs-calculate-sugar-0.94')
 	from functions import is_int
 
