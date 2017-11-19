@@ -1,15 +1,19 @@
 import sys
 import webbrowser
 import re
+import os
 from testFactorize import testFactorize
 from testPow import testPow
 from testIsInt import testIsInt
 from testb10bin import testb10bin
 #Move these later, yeah?
 
-html = "<table><tr><th>Test Case</th><th>Method</th><th>Requirement</th><th>Test Input(s)</th><th>Expected</th><th>Results</th></tr>"
+html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="main.css"></head><body><table><tr><th>Test Case</th><th>Method</th><th>Requirement</th><th>Test Input(s)</th><th>Expected</th><th>Actual</th><th>Results</th></tr>'
 
-for x in range (1, 26):
+numberFilesList = os.listdir('../testCases')
+numberFiles = len(numberFilesList) + 1
+
+for x in range (1, 7):
 	currentTestCase = '../testCases/testCase' + str(x) 
 	testCase = open((currentTestCase + '.txt'), 'r')
 	contents = testCase.read()
@@ -24,23 +28,29 @@ for x in range (1, 26):
 	expected = expected.replace("Expected Outcome:", "")
 	arguments = caseLines[4]
 	arguments = arguments.replace("Test Input(s):", "")
+	actual = 0
 
 	if(method == 'pow'):
 		arguments = arguments.split()
 		if len(arguments) == 2:
 			try:
-				result = testPow(arguments[0],arguments[1])
-				
-			except:
+				actual = testPow(int(arguments[0]),int(arguments[1]))
+			except Exception as ex:
+				actual = ex.message
 				result = "Fail"
 		else:
+			actual = "Incorrect number of argument(s)"
 			result="Fail"
-
+		print(actual)
+		if (actual == expected):
+			result = "Pass"
+		else:
+			result = "Fail"
 	elif(method == 'b10bin'):
 		arguments = arguments.split()
 		if len(arguments) == 1:
 			try:
-				result = testb10bin(arguments)
+				actual = testb10bin(arguments[0])
 			except:
 				result = "Fail"
 		else:
@@ -50,27 +60,28 @@ for x in range (1, 26):
 		arguments = arguments.split()
 		if len(arguments) == 1:
 			try:
-				result = testFactorize(arguments)
+				actual = testFactorize(int(arguments[0]))
 			except:
 				result = "Fail"
 		else:
 			result = "Fail"
 
 	elif(method == 'is_int'):
-		print(arguments)
+		arguments = arguments.split()
 		if len(arguments) == 1:
 			try:
-				result = testIsInt(arguments)
+				actual = testIsInt(int(arguments[0]))
 			except:
 				result = "Fail"
 		else:
 			result = "Fail"
 	else:
 		print("wut")
-	#t.rows.append([caseNum, method, requirement, arguments, expected, result])
-	html = html+"<tr><td>"+caseNum+"</td><td>"+method+"</td><td>"+requirement+"</td><td>"+str(arguments)+"</td><td>"+expected+"</td><td>"+str(result)+"</td></tr>"
-html = html.join("</table>")
-with open("test.html", "w") as file:
-	file.write(str(html))
 
+	html = html+"<tr><td>"+caseNum+"</td><td>"+method+"</td><td>"+requirement+"</td><td>"+str(arguments)+"</td><td>"+str(expected)+"</td><td>"+str(actual)+"</td><td>"+str(result)+"</td></tr>"
+html = html + ("</body></table>")
+with open("report.html", "w") as file:
+	file.write(str(html))
+report = 'report.html'
+webbrowser.open_new_tab(report)
 
