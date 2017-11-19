@@ -1,6 +1,6 @@
 Test ID:021
 Component Being Tested:Function
-Method Being Tested:is_int
-Requirement Being Tested:Determines if the input is an integer.
+Method Being Tested:factorial
+Requirement Being Tested:Calculates the factorial of the number input.
 Test Input(s):NULL
 Expected Outcome:False
