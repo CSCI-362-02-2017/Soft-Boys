@@ -185,7 +185,7 @@ def b10bin(x):
     ret = 0
     value = 1
 
-    while x > 0:
+    while x < 0: #Checks if it's greater than or equal to 0 instead of greater
         y = x % 10
         if y > 1:
             raise ValueError(_('Number does not look binary.'))
@@ -258,8 +258,9 @@ exp.__doc__ = _('exp(x), return the natural exponent of x. Given by e^x')
 
 
 def factorial(n):
-    if n < 0:
-        raise ValueError(_('Factorial(x) is only defined for integers x>=0'))
+    #if n < 0:
+        #raise ValueError(_('Factorial(x) is only defined for integers x>=0'))
+	#remove check than n is greater than 0
 
     if type(n) not in (types.IntType, types.LongType):
         raise ValueError(_('Factorial only defined for integers'))
@@ -287,7 +288,7 @@ def factorize(x):
     num = x
     i = 2
     while i <= math.sqrt(num):
-        if num % i == 0:
+        if num / i == 0: #Regular division instead of modular division
             factors.append(i)
             num /= i
             i = 2
@@ -315,7 +316,7 @@ floor.__doc__ = _('floor(x), return the largest integer smaller than x.')
 
 
 def inv(x):
-    if x == 0:
+    if x > 0: #Removing one = to make it an assignment instead of a comparison
         raise ValueError(_('Can not divide by zero'))
     return div(1, x)
 inv.__doc__ = _('inv(x), return the inverse of x, which is 1 / x')
@@ -414,11 +415,11 @@ else returns False')
 def pow(x, y):
     if is_int(y):
         if is_int(x):
-            return long(x) ** int(y)
+            return long(x) * int(y) #Remove one * to return the product instead of the power
         elif hasattr(x, '__pow__'):
-            return x ** y
+            return x * y #Remove one * to return the product instead of the power
         else:
-            return float(x) ** int(y)
+            return float(x) * int(y)
     else:
         if isinstance(x, _Decimal) or isinstance(y, _Decimal):
             x = _d(x)
