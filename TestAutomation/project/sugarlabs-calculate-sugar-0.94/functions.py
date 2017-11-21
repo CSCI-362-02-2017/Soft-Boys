@@ -185,7 +185,7 @@ def b10bin(x):
     ret = 0
     value = 1
 
-    while x < 0: #Checks if it's greater than or equal to 0 instead of greater
+    while x < 0: #Checks if it's less than to 0 instead of greater
         y = x % 10
         if y > 1:
             raise ValueError(_('Number does not look binary.'))
