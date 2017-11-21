@@ -1,4 +1,5 @@
 import sys
+sys.path.insert(0, '../testCasesExecutables')
 import webbrowser
 import re
 import os
@@ -6,7 +7,6 @@ from testFactorize import testFactorize
 from testPow import testPow
 from testIsInt import testIsInt
 from testb10bin import testb10bin
-#Move these later, yeah?
 
 html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="main.css"></head><body><table><tr><th>Test Case</th><th>Method</th><th>Requirement</th><th>Test Input(s)</th><th>Expected</th><th>Actual</th><th>Results</th></tr>'
 
@@ -50,8 +50,9 @@ for x in range (1, 7):
 		arguments = arguments.split()
 		if len(arguments) == 1:
 			try:
-				actual = testb10bin(arguments[0])
-			except:
+				actual = testb10bin(int(arguments[0]))
+			except Exception as ex:
+				actual = ex.message
 				result = "Fail"
 		else:
 			result = "Fail"
@@ -61,17 +62,29 @@ for x in range (1, 7):
 		if len(arguments) == 1:
 			try:
 				actual = testFactorize(int(arguments[0]))
-			except:
+			except Exception as ex:
+				actual = ex.message
 				result = "Fail"
 		else:
 			result = "Fail"
 
-	elif(method == 'is_int'):
+	elif(method == 'factorial'):
 		arguments = arguments.split()
 		if len(arguments) == 1:
 			try:
-				actual = testIsInt(int(arguments[0]))
-			except:
+				actual = testFactorial(int(arguments[0]))
+			except Exception as ex:
+				actual = ex.message
+				result = "Fail"
+		else:
+			result = "Fail"
+	elif(method =='inverse')
+		arguments = arguments.split()
+		if len(arguments) == 1:
+			try:
+				actual = testFactorial(int(arguments[0]))
+			except Exception as ex:
+				actual = ex.message
 				result = "Fail"
 		else:
 			result = "Fail"
@@ -80,7 +93,7 @@ for x in range (1, 7):
 
 	html = html+"<tr><td>"+caseNum+"</td><td>"+method+"</td><td>"+requirement+"</td><td>"+str(arguments)+"</td><td>"+str(expected)+"</td><td>"+str(actual)+"</td><td>"+str(result)+"</td></tr>"
 html = html + ("</body></table>")
-with open("report.html", "w") as file:
+with open("../reports/report.html", "w") as file:
 	file.write(str(html))
 report = 'report.html'
 webbrowser.open_new_tab(report)
