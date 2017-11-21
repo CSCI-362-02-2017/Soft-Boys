@@ -3,6 +3,7 @@ sys.path.insert(0, '../testCasesExecutables')
 import webbrowser
 import re
 import os
+import glob
 from testFactorize import testFactorize
 from testPow import testPow
 from testIsInt import testIsInt
@@ -15,7 +16,7 @@ html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="main.css"></head
 #numberFilesList = os.listdir('../testCases')
 numberFiles = len(glob.glob1('../testCases','*.txt')) + 1
 
-for x in range (1, numberFiles):
+for x in range (21, numberFiles):
 	currentTestCase = '../testCases/testCase' + str(x) 
 	testCase = open((currentTestCase + '.txt'), 'r')
 	contents = testCase.read()
@@ -43,7 +44,6 @@ for x in range (1, numberFiles):
 		else:
 			actual = "Incorrect number of argument(s)"
 			result="Fail"
-		print(actual)
 		if (actual == expected):
 			result = "Pass"
 		else:
@@ -58,6 +58,10 @@ for x in range (1, numberFiles):
 				result = "Fail"
 		else:
 			result = "Fail"
+		if (actual == expected):
+			result = "Pass"
+		else:
+			result = "Fail"
 
 	elif(method == 'factorize'):
 		arguments = arguments.split()
@@ -67,6 +71,10 @@ for x in range (1, numberFiles):
 			except Exception as ex:
 				actual = ex.message
 				result = "Fail"
+		else:
+			result = "Fail"
+		if (actual == expected):
+			result = "Pass"
 		else:
 			result = "Fail"
 
@@ -80,7 +88,11 @@ for x in range (1, numberFiles):
 				result = "Fail"
 		else:
 			result = "Fail"
-	elif(method =='inverse')
+		if (actual == expected):
+			result = "Pass"
+		else:
+			result = "Fail"
+	elif(method =='inverse'):
 		arguments = arguments.split()
 		if len(arguments) == 1:
 			try:
@@ -88,6 +100,10 @@ for x in range (1, numberFiles):
 			except Exception as ex:
 				actual = ex.message
 				result = "Fail"
+		else:
+			result = "Fail"
+		if (actual == expected):
+			result = "Pass"
 		else:
 			result = "Fail"
 	else:
@@ -98,5 +114,5 @@ html = html + ("</body></table>")
 with open("../reports/report.html", "w") as file:
 	file.write(str(html))
 report = 'report.html'
-webbrowser.open_new_tab(report)
+webbrowser.open_new_tab("../reports/report.html")
 

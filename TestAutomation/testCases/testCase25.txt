@@ -2,5 +2,5 @@ Test ID:025
 Component Being Tested:Function
 Method Being Tested:factorial
 Requirement Being Tested:Calculates the factorial of the number input.
-Test Input(s):362
-Expected Outcome:True
+Test Input(s):5
+Expected Outcome:120
