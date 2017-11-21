@@ -11,7 +11,7 @@ from testb10bin import testb10bin
 from testFactorial import testFactorial
 from testInverse import testInverse
 
-html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="main.css"></head><body><table><tr><th>Test Case</th><th>Method</th><th>Requirement</th><th>Test Input(s)</th><th>Expected</th><th>Actual</th><th>Results</th></tr>'
+html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="main.css"></head><body><center><img src="lol.png"></center><table><tr><th>Test Case</th><th>Method</th><th>Requirement</th><th>Test Input(s)</th><th>Expected</th><th>Actual</th><th>Results</th></tr>'
 
 numberFiles = len(glob.glob1('../testCases','*.txt')) + 1
 
