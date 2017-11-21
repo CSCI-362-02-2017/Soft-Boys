@@ -7,13 +7,15 @@ from testFactorize import testFactorize
 from testPow import testPow
 from testIsInt import testIsInt
 from testb10bin import testb10bin
+from testFactorial import testFactorial
+from testInverse import testInverse
 
 html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="main.css"></head><body><table><tr><th>Test Case</th><th>Method</th><th>Requirement</th><th>Test Input(s)</th><th>Expected</th><th>Actual</th><th>Results</th></tr>'
 
-numberFilesList = os.listdir('../testCases')
-numberFiles = len(numberFilesList) + 1
+#numberFilesList = os.listdir('../testCases')
+numberFiles = len(glob.glob1('../testCases','*.txt')) + 1
 
-for x in range (1, 7):
+for x in range (1, numberFiles):
 	currentTestCase = '../testCases/testCase' + str(x) 
 	testCase = open((currentTestCase + '.txt'), 'r')
 	contents = testCase.read()
@@ -82,7 +84,7 @@ for x in range (1, 7):
 		arguments = arguments.split()
 		if len(arguments) == 1:
 			try:
-				actual = testFactorial(int(arguments[0]))
+				actual = testInverse(int(arguments[0]))
 			except Exception as ex:
 				actual = ex.message
 				result = "Fail"
