@@ -13,10 +13,9 @@ from testInverse import testInverse
 
 html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="main.css"></head><body><table><tr><th>Test Case</th><th>Method</th><th>Requirement</th><th>Test Input(s)</th><th>Expected</th><th>Actual</th><th>Results</th></tr>'
 
-#numberFilesList = os.listdir('../testCases')
 numberFiles = len(glob.glob1('../testCases','*.txt')) + 1
 
-for x in range (21, numberFiles):
+for x in range (1, numberFiles):
 	currentTestCase = '../testCases/testCase' + str(x) 
 	testCase = open((currentTestCase + '.txt'), 'r')
 	contents = testCase.read()
@@ -32,6 +31,7 @@ for x in range (21, numberFiles):
 	arguments = caseLines[4]
 	arguments = arguments.replace("Test Input(s):", "")
 	actual = 0
+	result = ""
 
 	if(method == 'pow'):
 		arguments = arguments.split()
@@ -88,11 +88,12 @@ for x in range (21, numberFiles):
 				result = "Fail"
 		else:
 			result = "Fail"
-		if (actual == expected):
-			result = "Pass"
-		else:
+		try:
+			if (int(actual) == int(expected)):
+				result = "Pass"
+		except:
 			result = "Fail"
-	elif(method =='inverse'):
+	elif(method == 'inverse'):
 		arguments = arguments.split()
 		if len(arguments) == 1:
 			try:
@@ -107,7 +108,7 @@ for x in range (21, numberFiles):
 		else:
 			result = "Fail"
 	else:
-		print("wut")
+		print("Invalid format on test cases")
 
 	html = html+"<tr><td>"+caseNum+"</td><td>"+method+"</td><td>"+requirement+"</td><td>"+str(arguments)+"</td><td>"+str(expected)+"</td><td>"+str(actual)+"</td><td>"+str(result)+"</td></tr>"
 html = html + ("</body></table>")

@@ -316,7 +316,7 @@ floor.__doc__ = _('floor(x), return the largest integer smaller than x.')
 
 
 def inv(x):
-    if x > 0: #Removing one = to make it an assignment instead of a comparison
+    if x >= 0: #Removing one = to make it an assignment instead of a comparison
         raise ValueError(_('Can not divide by zero'))
     return div(1, x)
 inv.__doc__ = _('inv(x), return the inverse of x, which is 1 / x')

@@ -1,6 +1,6 @@
-Test ID:029
+Test ID:030
 Component Being Tested:Function
 Method Being Tested:inverse
-Requirement Being Tested:Inverts an integer to a fraction and vice versa.
-Test Input(s):0.5
-Expected Outcome:2
+Requirement Being Tested:Calculates the inverse of an integer.
+Test Input(s):""
+Expected Outcome:Fail
