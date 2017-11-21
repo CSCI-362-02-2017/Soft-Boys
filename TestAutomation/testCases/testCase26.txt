@@ -3,4 +3,4 @@ Component Being Tested:Function
 Method Being Tested:inverse
 Requirement Being Tested:Inverts an integer to a fraction and vice versa.
 Test Input(s):NULL
-Expected Outcome:False
+Expected Outcome:Fail
