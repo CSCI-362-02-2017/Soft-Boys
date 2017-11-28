@@ -1,6 +1,6 @@
 Test ID:013
 Component Being Tested:Function
 Method Being Tested:b10bin
-Requirement Being Tested:Caculating from binary to integer.
+Requirement Being Tested:Calculating from binary to integer.
 Test Input(s):a
 Expected Outcome:Fail
