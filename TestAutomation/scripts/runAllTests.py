@@ -1,3 +1,11 @@
+##########################################################
+# File Name: runAllTests.py                              #
+# Authors: Joe Ayers, Maz Little, Jasmine Mai, Joe S     #
+# Date Created: October 31, 2017                         #
+# Date Modified: November 28, 2017                       #
+##########################################################
+
+
 import sys
 sys.path.insert(0, '../testCasesExecutables')
 import webbrowser
@@ -11,10 +19,13 @@ from testb10bin import testb10bin
 from testFactorial import testFactorial
 from testInverse import testInverse
 
+#Creates the HTML header and table
 html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="main.css"></head><body><center><img src="lol.png"></center><table><tr><th>Test Case</th><th>Method</th><th>Requirement</th><th>Test Input(s)</th><th>Expected</th><th>Actual</th><th>Results</th></tr>'
 
+#Determines the number of text files
 numberFiles = len(glob.glob1('../testCases','*.txt')) + 1
 
+#Goes through each individual text file with correct formatting
 for x in range (1, numberFiles):
 	currentTestCase = '../testCases/testCase' + str(x) 
 	testCase = open((currentTestCase + '.txt'), 'r')
