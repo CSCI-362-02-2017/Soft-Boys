@@ -7,7 +7,7 @@
 
 
 import sys
-sys.path.insert(0, '../testCasesExecutables')
+sys.path.insert(0, 'testCasesExecutables')
 import webbrowser
 import re
 import os
@@ -23,11 +23,11 @@ from testInverse import testInverse
 html = '<!DOCTYPE html><html><head><link rel="stylesheet" href="main.css"></head><body><center><img src="lol.png"></center><table><tr><th>Test Case</th><th>Method</th><th>Requirement</th><th>Test Input(s)</th><th>Expected</th><th>Actual</th><th>Results</th></tr>'
 
 #Determines the number of text files
-numberFiles = len(glob.glob1('../testCases','*.txt')) + 1
+numberFiles = len(glob.glob1('testCases','*.txt')) + 1
 
 #Goes through each individual text file with correct formatting
 for x in range (1, numberFiles):
-	currentTestCase = '../testCases/testCase' + str(x) 
+	currentTestCase = 'testCases/testCase' + str(x) 
 	testCase = open((currentTestCase + '.txt'), 'r')
 	contents = testCase.read()
 	caseLines = contents.split('\n')
@@ -123,8 +123,8 @@ for x in range (1, numberFiles):
 
 	html = html+"<tr><td>"+caseNum+"</td><td>"+method+"</td><td>"+requirement+"</td><td>"+str(arguments)+"</td><td>"+str(expected)+"</td><td>"+str(actual)+"</td><td>"+str(result)+"</td></tr>"
 html = html + ("</body></table>")
-with open("../reports/report.html", "w") as file:
+with open("reports/report.html", "w") as file:
 	file.write(str(html))
 report = 'report.html'
-webbrowser.open_new_tab("../reports/report.html")
+webbrowser.open_new_tab("reports/report.html")
 
